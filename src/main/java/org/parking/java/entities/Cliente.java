@@ -4,38 +4,52 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Cliente {
-    public String nombres;
+    public String nombre;
     public String apellidos;
     public Long numeroIdentificacion;
     public List<Vehiculo> misVehiculos = new ArrayList<Vehiculo>();
-    
 
-    
-    public Cliente() {
+
+public Cliente() {
     }
 
-    public Cliente(String nombres, String apellidos, Long numeroIdentificacion) {
-        this.nombres = nombres;
+
+public Cliente(String nombre, 
+               String apellidos, 
+               Long numeroIdentificacion) {
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.numeroIdentificacion = numeroIdentificacion;
+}
+
+
+
+
+public Cliente(String nombre, 
+               String apellidos, 
+               Long numeroIdentificacion, 
+               List<Vehiculo> misVehiculos) {
+        this.nombre = nombre;
         this.apellidos = apellidos;
         this.numeroIdentificacion = numeroIdentificacion;
+        this.misVehiculos = misVehiculos;
     }
+public void addVehicle (Vehiculo vehiculo) {
+    //anadir el carrito a la lista
+    //this: para acceder a atributos 
+    //y metodos al interior del objeto
+    //NOTA: usenla al interior de metodos 
+    this.misVehiculos.add(vehiculo);
+}
+//Otra sobrecarga del metodo 
+//addVehicle
+public void addVehicle(String placa,
+                    TipoVehiculo tv) {
+            Vehiculo v = new Vehiculo();
+            v.placa = placa ;
+            v.tipoVehiculo = tv ;
+    this.misVehiculos.add(v);
 
-    //Definir metodo de la clase
-    //addCar: vinvular un carrito al cliente
-    public void addVehicle(Vehiculo vehiculo){
+                    }
 
-        //añadir el carrito a la lista
-        //this:para acceder a atributos
-        //y metodos al interior del objeto
-        //NOTA:usenla al interior de metodos
-        this.misVehiculos.add(vehiculo);
-    }
-    
-    //otra sobrecarga del metodo addvehivle
-    public void addVehicle(String placa,TipoVehiculo tv){
-        Vehiculo v = new Vehiculo();
-        v.placa = placa;
-        v.tipoVehiculo = tv;
-        this.misVehiculos.add(v);
-    }
 }
