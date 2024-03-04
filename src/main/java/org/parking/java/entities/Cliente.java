@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Cliente {
-    public String nombre;
-    public String apellidos;
-    public Long numeroIdentificacion;
-    public List<Vehiculo> misVehiculos = new ArrayList<Vehiculo>();
+    private  String nombre;
+    private  String apellidos;
+    private Long numeroIdentificacion;
+    private  List<Vehiculo> misVehiculos = new ArrayList<Vehiculo>();
 
 
-public Cliente() {
+private  Cliente() {
     }
 
 
@@ -46,10 +46,43 @@ public void addVehicle (Vehiculo vehiculo) {
 public void addVehicle(String placa,
                     TipoVehiculo tv) {
             Vehiculo v = new Vehiculo();
-            v.placa = placa ;
-            v.tipoVehiculo = tv ;
+            //utilizando el setter de placa para asignar valor d placa AL NUEVO VEHICULO
+            v.setPlaca(placa);
+            v.setTipoVehiculo(tv);;
     this.misVehiculos.add(v);
 
                     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public Long getNumeroIdentificacion() {
+        return numeroIdentificacion;
+    }
+
+    public void setNumeroIdentificacion(Long numeroIdentificacion) {
+        this.numeroIdentificacion = numeroIdentificacion;
+    }
+
+    public List<Vehiculo> getMisVehiculos() {
+        return misVehiculos;
+    }
+
+    public void setMisVehiculos(List<Vehiculo> misVehiculos) {
+        this.misVehiculos = misVehiculos;
+    }
 
 }

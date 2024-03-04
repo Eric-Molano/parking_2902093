@@ -25,16 +25,17 @@ public class Main {
         //3. asignacion y new 
         //4. constructor del obejto
         Vehiculo carrito1 = new Vehiculo ("ASD 789", TipoVehiculo.PARTICULAR);
-        carrito1.placa = "ASD 789";
-        carrito1.tipoVehiculo = TipoVehiculo .PARTICULAR;
+        carrito1.setPlaca("ASD 789"); 
+        carrito1.setTipoVehiculo( TipoVehiculo .PARTICULAR); 
 
         Vehiculo carrito2 = new Vehiculo ("ASF 321", TipoVehiculo.MOTO); 
-        carrito2.placa = "ASF 321";
-        carrito2.tipoVehiculo = TipoVehiculo .MOTO;
-
+        carrito2.setPlaca("ASF 321"); 
+        carrito2.setTipoVehiculo(TipoVehiculo .MOTO);
+        Vehiculo motico = new Vehiculo();
+        motico.setPlaca("XHJ 567");
     //crear(instanciar) un cliente
     Cliente cliente1 = new Cliente();
-    cliente1.nombre = "Eric";
+    cliente1.nombre = "Eric"; 
     cliente1.apellidos =" Molano Galindo";
     cliente1.numeroIdentificacion = 1031540737L;
 
@@ -42,6 +43,7 @@ public class Main {
     cliente2.nombre = "Cristian";
     cliente2.apellidos ="Castiblanco";
     cliente2.numeroIdentificacion = 1013112797L;
+    
 
     
     //Invocar el metodo addVehicle
@@ -95,12 +97,12 @@ public class Main {
 //  -fecha y hora de inicio
 //  -fecha y hora de fin 
 //  -cupo (nombre)
-System.out.println("|Placa:" + p.vehiculo.placa  + "|");
-System.out.println("|valor:" + p.valor + "|");
-System.out.println("|fecha y hora entrada:" + p.fechaHoraInicio.toString() + "|");
-System.out.println("|fecha y hora fin:" + p.fechaHoraFin.toString() + "|");
-System.out.println("|cupo:" + p.cupo.nombre + "|");
-System.out.println("|empleado" + p.empleado.codigo + "|");
+System.out.println("|Placa:" + p.getVehiculo().getPlaca()  + "|" +
+            "|valor:" + p.getValor() + "|" +
+            "|fecha y hora entrada:" + p.getFechaHoraInicio().toString() + "|" +
+            "|fecha y hora fin:" + p.getFechaHoraFin().toString() + "|" +
+            "|cupo:" + p.getCupo().getNombre() + "|" +
+            "|empleado" + p.getEmpleado().getCodigo() + "|" );
     }
  
     }
